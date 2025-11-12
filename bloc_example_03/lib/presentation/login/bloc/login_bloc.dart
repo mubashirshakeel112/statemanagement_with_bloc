@@ -25,10 +25,10 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       bool result = await loginRepository.login(state.username, state.password);
       if (result) {
         emit(state.copyWith(status: LoginStatus.success));
-        print('Success 🎉');
       }
     } catch (e) {
       emit(state.copyWith(status: LoginStatus.failure, errorMessage: e.toString()));
+      throw Exception(e.toString());
     }
   }
 }

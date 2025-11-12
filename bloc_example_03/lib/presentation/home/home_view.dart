@@ -1,3 +1,4 @@
+import 'package:bloc_example_03/services/preferences.dart';
 import 'package:bloc_example_03/widgets/custom_snack_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -29,13 +30,15 @@ class HomeView extends StatelessWidget {
           IconButton(
             icon: Icon(Icons.notifications_none, color: theme.colorScheme.onSurface),
             onPressed: () {
+              String pref = Preference.accessToken;
+              print(pref);
               // Handle notifications
             },
           ),
           const Padding(
             padding: EdgeInsets.only(right: 16.0),
             child: CircleAvatar(
-              backgroundImage: NetworkImage('https://i.pravatar.cc/150?img=3'),
+              backgroundImage: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAX3_HSK_fS1uJMnH9lPURZv54cQWUEfvk0xkITEdJf29T8Ce8uTcoJBpUgS3mfFv7tRQ&usqp=CAU'),
             ),
           ),
         ],
